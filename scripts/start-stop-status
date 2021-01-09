@@ -11,7 +11,7 @@ case $1 in
             if [ ! -z $container_id ]; then
                 docker ps --no-trunc -aq | grep $container_id 
                 if [ $? -eq 0 ]; then
-                    is_exist=1
+                    $is_exist=1
                     echo 'docker container is already exist.' >> "${SYNOPKG_PKGDEST}/package/logs/output.log"
                 else
                     echo 'docker container is not exist.' >> "${SYNOPKG_PKGDEST}/package/logs/output.log"
